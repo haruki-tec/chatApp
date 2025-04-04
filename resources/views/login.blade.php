@@ -1,3 +1,6 @@
+@php
+    use Illuminate\Support\Facades\Route;
+@endphp
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -26,6 +29,7 @@
                 <input type="password" name="password" placeholder="password">
                 <button type="'submit" id="login-button">Login</button>
             </form>
+            <a href="{{ route('glogin') }}" class="google-login">Googleでログイン</a>
         </div>
     </div>
 </body>
