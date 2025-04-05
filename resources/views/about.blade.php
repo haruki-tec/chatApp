@@ -9,7 +9,7 @@
 <body>
     <h1>About Page</h1>
     <p>よくここまでたどり着いたなアホめ</p>
-    <form action="{{ route('logout') }}" method="POST">
+    <form action="{{ route('auth_logout') }}" method="POST">
         @csrf
         <button type="submit">ログアウト</button>
     </form>

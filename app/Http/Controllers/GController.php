@@ -28,7 +28,8 @@ class GController extends Controller
 
         Auth::login($user);
         return redirect('/about');
-        } catch (\Exception $e) {
+        } 
+        catch (\Exception $e) {
             return redirect('/login');
         }
     }

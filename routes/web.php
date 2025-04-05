@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();
@@ -22,9 +22,9 @@ Route::get('/about', function () {
 })->middleware('auth')->name('about');
 
 
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/authlogin', [AuthController::class, 'auth_login'])->name('auth_login');
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'auth_logout'])->name('auth_logout');
 
 Route::get('login/google', [GController::class,'redirectToGoogle'])->name('glogin');
 

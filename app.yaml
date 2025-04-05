@@ -1,0 +1,30 @@
+runtime: php82
+
+handlers:
+
+  - url: /build/assets
+    static_dir: public/build/assets
+    secure: always
+
+  - url: /(.*\.(ico|css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))
+    static_files: public/\1
+    upload: public/.*\.(ico|css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)
+    secure: always
+
+env_variables:
+  APP_KEY: base64:rnkIz1H7NeZRcLQ7NSa8IATS8b1315P24BZFNO6ECN8=
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  CACHE_DRIVER: cookie
+  SESSION_DRIVER: cookie
+  APP_SERVICES_CACHE: /tmp/services.php
+  APP_PACKAGES_CACHE: /tmp/packages.php
+  APP_CONFIG_CACHE: /tmp/config.php
+  APP_ROUTES_CACHE: /tmp/routes.php
+  DB_DATABASE: "chatapp1234"
+  DB_USERNAME: "haruki"
+  DB_PASSWORD: "1939Toge"
+  DB_HOST: "db4free.net"
+  DB_PORT: "3306"
+
+  LOG_CHANNEL: stderr
