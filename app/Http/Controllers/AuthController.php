@@ -14,14 +14,23 @@ class AuthController extends Controller
             "password"=> ['required'],
         ]);
 
+        
+
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
+            if ($request->ajax()) {
+                return response()->json(['redirect' => route('about')]);
+            }
+
             return redirect()->intended('about');  
         }
 
-        else {
-            return redirect()->intended('login');
-        };
+        if ($request->ajax()) {
+            return response()->json(['error' => 'Invalid credentials'], 422);
+        }
+        
+        return redirect()->intended('login');
     }
 
     public function auth_logout(Request $request)

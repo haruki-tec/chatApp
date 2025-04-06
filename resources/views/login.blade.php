@@ -14,7 +14,7 @@
     <div class="wrapper">
         <div class="container">
             <h1>Login</h1>
-            <form class="form" action="{{ route('auth_login') }}" method="POST">
+            <form class="form" action="{{ route('auth_login') }}" method="POST" id="loginForm">
                 @if ($errors->any())
                     <div class="alert">
                         <ul>
@@ -27,7 +27,7 @@
                 @csrf
                 <input type="email" name="email" placeholder="username">
                 <input type="password" name="password" placeholder="password">
-                <button type="'submit" id="login-button">Login</button>
+                <button type="submit" id="login-button">Login</button>
             </form>
             <a href="{{ route('glogin') }}" class="google-login">Googleでログイン</a>
         </div>
