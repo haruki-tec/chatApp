@@ -42,6 +42,20 @@ body {
     transition-timing-function: ease-in-out;
     font-weight: 200;
 }
+
+.oopsContainer{
+    margin:0 auto;
+    text-align: center;
+    color: rgb(49, 49, 49);
+}
+
+.oopsContainer h1{
+    font-size: 40px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    font-weight: 200;
+}
+
 form {
     padding: 20px 0;
     position: relative;
@@ -226,7 +240,26 @@ form button:hover {
     animation: spin 1s linear infinite;
 }
 
+.tip1{
+    animation: gaming 2s linear infinite;
+    font-family: "HanziPen SC";
+    font-size: 30px;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+
+@keyframes gaming {
+    /* 色の指定 */
+    0% { color: Magenta; }
+    33% { color: yellow; }
+    66% { color: Cyan; }
+    100% { color: Magenta; }
+}
+
+.logoutButton{
+
 }
