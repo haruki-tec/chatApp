@@ -13,14 +13,18 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
 
 Route::get('/about', function () {
     return view('about');
 })->middleware('auth')->name('about');
 
+
+
+#auth系
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
 Route::post('/authlogin', [AuthController::class, 'auth_login'])->name('auth_login');
 

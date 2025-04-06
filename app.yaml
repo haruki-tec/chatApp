@@ -1,15 +1,23 @@
 runtime: php82
 
-handlers:
+instance_class: F1
+automatic_scaling:
+  min_idle_instances: 0
+  max_idle_instances: 1
+  min_pending_latency: 30ms
+  max_pending_latency: automatic
 
-  - url: /build/assets
-    static_dir: public/build/assets
-    secure: always
+handlers:
 
   - url: /(.*\.(ico|css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))
     static_files: public/\1
     upload: public/.*\.(ico|css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)
     secure: always
+    
+  - url: /build/assets
+    static_dir: public/build/assets
+    secure: always
+
 
 env_variables:
   APP_KEY: base64:rnkIz1H7NeZRcLQ7NSa8IATS8b1315P24BZFNO6ECN8=
@@ -21,10 +29,16 @@ env_variables:
   APP_PACKAGES_CACHE: /tmp/packages.php
   APP_CONFIG_CACHE: /tmp/config.php
   APP_ROUTES_CACHE: /tmp/routes.php
-  DB_DATABASE: "chatapp1234"
-  DB_USERNAME: "haruki"
-  DB_PASSWORD: "1939Toge"
-  DB_HOST: "db4free.net"
-  DB_PORT: "3306"
+
+  DB_CONNECTION: pgsql
+  DB_URL: "postgresql://chatapp_owner:npg_xSLYFEbh2kp7@ep-yellow-resonance-a1u7didd.ap-southeast-1.aws.neon.tech/chatapp?sslmode=require"
+
+  #DB_DATABASE: "chatapp"
+  #DB_USERNAME: "chatapp_owner"
+  #DB_PASSWORD: 'npg_xSLYFEbh2kp7'
+  #DB_HOST: "ep-yellow-resonance-a1u7didd-pooler.ap-southeast-1.aws.neon.tech"
+  #DB_PORT: "5432"
+  #DB_SSLMODE: "require"
+  #DB_ENDPOINT_ID: "ep-yellow-resonance-a1u7didd"
 
   LOG_CHANNEL: stderr
