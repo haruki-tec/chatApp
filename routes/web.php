@@ -26,6 +26,10 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+Route::get('/googlemap', function () {
+    return view('map');
+})->name('map');
+
 Route::post('/authlogin', [AuthController::class, 'auth_login'])->name('auth_login');
 
 Route::post('/logout', [AuthController::class, 'auth_logout'])->name('auth_logout');
