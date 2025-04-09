@@ -80,7 +80,7 @@
       const CONFIGURATION = {
         "ctaTitle": "search",
         "mapOptions": {"center":{"lat":37.4221,"lng":-122.0841},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":true,"zoom":11,"zoomControl":true,"maxZoom":22,"mapId":""},
-        "mapsApiKey": "AIzaSyCLCyorq8AlQoWG33WzzIM9IVmLSWffdYA",
+        "mapsApiKey": "xxxx",
         "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":true,"ctaControl":true}
       };
 
@@ -165,7 +165,7 @@
     </script>
   </head>
   <body>
-    <gmpx-api-loader key="AIzaSyCLCyorq8AlQoWG33WzzIM9IVmLSWffdYA" solution-channel="GMP_QB_addressselection_v4_cABC">
+    <gmpx-api-loader key="xxxxxx" solution-channel="GMP_QB_addressselection_v4_cABC">
     </gmpx-api-loader>
     <gmpx-split-layout row-layout-min-width="600">
       <div class="panel" slot="fixed">
