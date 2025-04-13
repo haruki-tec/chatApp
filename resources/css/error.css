@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.oopsContainer{
+    flex-flow: column;
+    margin:120px auto;
+    text-align: center;
+    color: rgb(49, 49, 49);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.oopsContainer h1{
+    font-size: 10em;
+    -webkit-text-stroke: 2px black;
+    paint-order: stroke;
+    color : white;
+}
+
+.toLogin {
+    outline: none;
+    border: none;
+    background-color: #2e2e2e;
+    width: 250px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    transition-duration: 0.25s;
+    font-weight: 300;
+    color: #ffffff;
+    cursor: pointer;
+}
+.toLogin:hover {
+    background-color: #424242;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.514);
+}

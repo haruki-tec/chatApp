@@ -29,6 +29,9 @@ Route::post('/authlogin', [AuthController::class, 'auth_login'])->name('auth_log
 
 Route::post('/logout', [AuthController::class, 'auth_logout'])->name('auth_logout');
 
+
+
+
 Route::get('login/google', [GController::class,'redirectToGoogle'])->name('glogin');
 
 Route::get('login/google/callback', [GController::class,'handleGoogleCallback'])->name('gclogin');
