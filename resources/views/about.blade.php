@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="oopsContainer">
-        <h1>ページはまだ作られてないみたいだよ</h1>
+        <h1>こんにちは{{ session('user_name') }}さん!</h1>
+        <h2>ページはまだ作られてないみたいだよ</h2>
         <p>Tips>DBレスポンスが遅いのはお金がないからだよ!</p>
         <form class="logoutButton" action="{{ route('auth_logout') }}" method="POST">
             @csrf

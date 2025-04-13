@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GController;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -22,9 +23,7 @@ Route::get('/about', function () {
 
 #auth系
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');
 
 Route::post('/authlogin', [AuthController::class, 'auth_login'])->name('auth_login');
 
@@ -33,3 +32,7 @@ Route::post('/logout', [AuthController::class, 'auth_logout'])->name('auth_logou
 Route::get('login/google', [GController::class,'redirectToGoogle'])->name('glogin');
 
 Route::get('login/google/callback', [GController::class,'handleGoogleCallback'])->name('gclogin');
+
+Route::get('/check-session', function () {
+    dd(session()->all());
+});

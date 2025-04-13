@@ -61,7 +61,7 @@ form {
     position: relative;
     z-index: 2;
 }
-form input {
+.input-bar{
     outline: none;
     border: 1px solid rgba(255, 255, 255, 0.4);
     background-color: rgba(255, 255, 255, 0.2);
@@ -76,16 +76,16 @@ form input {
     font-weight: 300;
     color: #000000;
 }
-form input:hover {
+.input-bar:hover {
     transform: translateY(-2px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.514);
 }
-form input:focus {
+.input-bar:focus {
     background-color: #fff;
     width: 300px;
     color: #000000;
 }
-form input::placeholder {
+.input-bar:placeholder {
     color: #fff;
 }
 form button {
@@ -187,7 +187,7 @@ form button:hover {
     animation-delay: 11s;
 }
 
-.google-login {
+.login {
     background-color: #000000;
     color: white;
     padding: 10px 20px;
@@ -203,7 +203,7 @@ form button:hover {
     text-align: center;
 }
 
-.google-login:hover {
+.login:hover {
     background-color: #2f3842;
     transform: translateY(-2px);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -258,8 +258,4 @@ form button:hover {
     33% { color: yellow; }
     66% { color: Cyan; }
     100% { color: Magenta; }
-}
-
-.logoutButton{
-
 }

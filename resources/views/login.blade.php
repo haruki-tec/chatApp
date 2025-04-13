@@ -25,11 +25,15 @@
                     </div>
                 @endif
                 @csrf
-                <input type="email" name="email" placeholder="username">
-                <input type="password" name="password" placeholder="password">
-                <button type="submit" id="login-button">Login</button>
+                <input class="input-bar" type="email" name="email" placeholder="username">
+                <input class="input-bar" type="password" name="password" placeholder="password">
+                <button class="login" type="submit" id="login-button">Login</button>
+                <div class="checkbox-container">
+                    <input type='checkbox' name="remember-me" value="1">
+                    ログイン状態を維持する
+                </div>
             </form>
-            <a href="{{ route('glogin') }}" class="google-login">Googleでログイン</a>
+            <a href="{{ route('glogin') }}" class="login">Googleでログイン</a>
 
             <p class=tip1>
                 ↑開発用アカウントは<br>

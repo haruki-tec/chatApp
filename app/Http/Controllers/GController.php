@@ -20,30 +20,35 @@ class GController extends Controller
     public function handleGoogleCallback(Request $request)
     {
         try {
-        $guser = Socialite::driver('google')->user();
-        $user = User::where('email', $guser->email)->first();
+        $gUser = Socialite::driver('google')->user();
+        $user = User::where('email', $gUser->email)->first();
         if ($user == null) {
-            $user = $this->createUserByGoogle($guser);
+            $user = $this->createUserByGoogle($gUser,$request);
         }
 
+    
         Auth::login($user);
+
+        session(['user_name' => $gUser->name]);
         return redirect('/about');
-        } 
-        catch (\Exception $e) {
+
+        }catch (\Exception $e) {
             return redirect('/login');
         }
     }
 
-    public function createUserByGoogle($gUser){
+    public function createUserByGoogle($gUser,$request){
         try{
             $user = User::create([
                 'name'=> $gUser->name,
                 'email'=> $gUser->email,
                 'password'=> \Illuminate\Support\Facades\Hash::make(uniqid(mt_rand(), true)),
             ]);
+            
+            
             return $user;
-        } 
-        catch (\Exception $e) {
+            
+        }catch (\Exception $e) {
             Log::error('User creation error: ' . $e->getMessage());
             throw $e;
         }
