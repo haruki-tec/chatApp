@@ -32,9 +32,6 @@
             <a href="{{ route('glogin') }}" class="google-login">Googleでログイン</a>
 
             <p class=tip1>
-                ↑開発用アカウントは<br>
-                username:developer@dev.com, password:dev<br><br>
-                ⚠google認証を行うと鯖主に垢名がモロバレします。
             </p>
         </div>
     </div>
